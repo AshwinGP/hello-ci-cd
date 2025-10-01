@@ -5,8 +5,8 @@
   "scripts": {
     "test": "node --test",
     "build": "mkdir -p dist && node -e \"require('fs').writeFileSync('dist/build.txt','ok')\"",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --config eslint.config.js",
+    "lint:fix": "eslint . --config eslint.config.js --fix",
     "format": "prettier . --check",
     "format:fix": "prettier . --write"
   },
