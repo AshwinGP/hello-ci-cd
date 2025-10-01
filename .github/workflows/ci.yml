@@ -21,13 +21,26 @@ jobs:
           cache: 'npm'
 
       - name: Install
-        run: npm ci || npm install
+        shell: bash
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install --no-fund --no-audit
+          fi
 
       - name: Test
         run: npm test
 
       - name: Build
         run: npm run build
+
+      - name: Debug file tree
+        run: |
+          echo "Node version:" && node -v
+          echo "NPM version:" && npm -v
+          echo "Repo tree:" && ls -la
+          echo "Dist tree:" && ls -la dist || true
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
