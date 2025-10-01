@@ -5,8 +5,18 @@
   "scripts": {
     "test": "node --test",
     "build": "mkdir -p dist && node -e \"require('fs').writeFileSync('dist/build.txt','ok')\"",
-    "lint": "echo \"No linter yet\""
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --check",
+    "format:fix": "prettier . --write"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^9.11.1",
+    "@eslint/js": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3"
+  }
 }
 
