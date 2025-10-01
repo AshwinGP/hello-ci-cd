@@ -1,0 +1,12 @@
+{
+  "name": "hello-ci-cd",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build": "mkdir -p dist && node -e \"require('fs').writeFileSync('dist/build.txt','ok')\"",
+    "lint": "echo \"No linter yet\""
+  },
+  "devDependencies": {}
+}
+
