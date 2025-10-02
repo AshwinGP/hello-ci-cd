@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "start": "node index.js",
     "test": "node --test",
     "build": "mkdir -p dist && node -e \"require('fs').writeFileSync('dist/build.txt','ok')\"",
     "lint": "eslint . --config eslint.config.js",
