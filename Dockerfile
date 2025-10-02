@@ -13,6 +13,9 @@ RUN npm ci --only=production && npm cache clean --force
 # Copy source code
 COPY . .
 
+# Copy environment configs
+COPY config/ ./config/
+
 # Build the application
 RUN npm run build
 
@@ -30,6 +33,7 @@ RUN npm ci --only=production && npm cache clean --force
 # Copy built application from builder stage
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/index.js ./
+COPY --from=builder /app/config ./config
 
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \

@@ -1,0 +1,9 @@
+{
+  "environment": "staging",
+  "port": 3000,
+  "logLevel": "debug",
+  "features": {
+    "newFeature": true,
+    "betaMode": true
+  }
+}
